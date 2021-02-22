@@ -1,0 +1,10 @@
+C:\Users\ylwu5\Desktop\Game Engineering\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Desktop\Game Engineering\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\ylwu5\Desktop\Game Engineering\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Desktop\Game Engineering\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\ylwu5\Desktop\CS-UY 3113\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Desktop\CS-UY 3113\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\ylwu5\Desktop\CS-UY 3113\homeworks\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Desktop\CS-UY 3113\homeworks\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw1\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
