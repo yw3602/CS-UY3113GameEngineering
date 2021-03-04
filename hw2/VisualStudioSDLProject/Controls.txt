@@ -1,0 +1,5 @@
+Press space to start or restart the game.
+
+Use "W" & "S" to control the paddle on the left, and use "↑" and "↓" to control the paddle on the right.
+
+Paddles does not move when keys of the opposite directions are pressed at the same time.

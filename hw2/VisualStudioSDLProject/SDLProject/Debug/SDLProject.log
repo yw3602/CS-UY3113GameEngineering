@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw2\VisualStudioSDLProject\SDLProject\main.cpp(230,102): warning C4305: “初始化”: 从“double”到“float”截断
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw2\VisualStudioSDLProject\SDLProject\main.cpp(232,92): warning C4305: “初始化”: 从“double”到“float”截断
+  ShaderProgram.cpp
+  正在生成代码...
+  SDLProject.vcxproj -> C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw2\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
