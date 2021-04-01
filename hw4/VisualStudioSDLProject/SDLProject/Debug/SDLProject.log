@@ -1,0 +1,6 @@
+﻿  Entity.cpp
+  main.cpp
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw4\VisualStudioSDLProject\SDLProject\main.cpp(70,23): warning C4018: “<”: 有符号/无符号不匹配
+  ShaderProgram.cpp
+  正在生成代码...
+  SDLProject.vcxproj -> C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw4\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
