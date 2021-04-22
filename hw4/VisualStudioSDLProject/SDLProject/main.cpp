@@ -11,6 +11,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
 #include <vector>
+#include <SDL_mixer.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -29,6 +30,11 @@ struct GameState {
 GameState state;
 
 GLuint fontTextureID;
+
+//audios
+Mix_Music* music;
+Mix_Chunk* step;
+Mix_Chunk* gameEnd;
 
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
@@ -107,7 +113,7 @@ void DrawText(ShaderProgram* program, GLuint fontTextureID, std::string text,
 }
 
 void Initialize() {
-    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     displayWindow = SDL_CreateWindow("Textured!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
@@ -119,6 +125,15 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
 
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
+
+    //audio
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("bgm_shop.mp3");
+    Mix_PlayMusic(music, -1);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 3);
+    step = Mix_LoadWAV("chatmessage.wav");
+    gameEnd = Mix_LoadWAV("playerenter.wav");
+
 
     viewMatrix = glm::mat4(1.0f);
     modelMatrix = glm::mat4(1.0f);
@@ -291,11 +306,13 @@ void Update() {
                 if (state.player->velocity.y < 0 
                     && state.player->position.y>state.enemies[i].position.y + (state.enemies[i].height - 0.15)) {
                     state.player->jump = true;
+                    Mix_PlayChannel(-1, step, 0);
                     state.enemies[i].isActive = false;
                 }
                 else {
                     state.player->isActive = false;
                     failed = true;
+                    Mix_PlayChannel(-1, gameEnd, 0);
                 }
             }
         }
@@ -315,7 +332,10 @@ void Update() {
             beated += 1;
         }
     }
-    if (beated == ENEMY_COUNT) { winned = true; }
+    if (beated == ENEMY_COUNT && !winned) {
+        winned = true;
+        Mix_PlayChannel(-1, gameEnd, 0);
+    }
 
 
     accumulator = deltaTime;
