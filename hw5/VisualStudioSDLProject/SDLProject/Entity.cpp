@@ -26,6 +26,7 @@ bool Entity::CheckSensorCollision(glm::vec3 sensor, Entity* other) {
 
 
 bool Entity::CheckCollision(Entity* other) {
+
     if (!isActive || !other->isActive) { return false; }
 
     float xdist = fabs(position.x - other->position.x) - (width + other->width) / 2.0f;

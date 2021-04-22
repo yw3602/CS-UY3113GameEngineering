@@ -18,3 +18,5 @@ C:\Users\ylwu5\Desktop\CS-UY 3113\模板+Tileset\VisualStudioSDLProject\SDLProje
 C:\Users\ylwu5\Desktop\CS-UY 3113\模板+Tileset\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
 C:\Users\ylwu5\Desktop\CS-UY 3113\homeworks\hw5\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
 C:\Users\ylwu5\Desktop\CS-UY 3113\homeworks\hw5\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw5\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw5\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb

@@ -12,7 +12,7 @@ unsigned int level1_data[] =
 	3, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
 	3, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
 	3, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
-	3, 13, 13, 13, 13, 13, 13,  0, 28, 13, 28, 28, 13, 13,
+	3, 13, 13, 13, 13, 13, 13,  0, 28, 28, 28, 28, 13, 13,
 	3,  0,  0,  0, 13, 13,  0,  3, 75, 13, 13, 13, 13, 13,
 	3,  3,  3,  3, 13,  0,  3,  3, 29,  1,  1,  1,  1,  1
 };
@@ -72,12 +72,19 @@ void Level1::Initialize() {
 void Level1::Update(float deltaTime) {
 
     for (int i = 0; i < LEVEL1_ENEMY_COUNT; i++) {
-        if (state.player->CheckCollision(&state.enemies[i])) {
-            state.player->health -= 1;
-            state.player->position = glm::vec3(1, 0, 0);
-            /*
+        if (fabs(state.player->position.y - state.enemies[i].position.y) <= (state.player->height + state.enemies[i].height) / 2 + 0.05 &&
+            fabs(state.player->position.x - state.enemies[i].position.x) <= (state.player->width + state.enemies[i].width) / 2 &&
+            state.enemies[i].isActive)
+
+            //state.player->CheckCollision(&state.enemies[i])) {  // I don't know why checkCollision does not work properly on y axis here
+
+        {
+
+            //state.player->health -= 1;
+            //state.player->position = glm::vec3(1, 0, 0);
+
             if (state.player->velocity.y < 0
-                && state.player->position.y>state.enemies[i].position.y + (state.enemies[i].height - 0.15)) {
+                && state.player->position.y > state.enemies[i].position.y) {
                 state.player->jump = true;
                 //Mix_PlayChannel(-1, stepSound, 0);
                 //state.player->velocity = glm::vec3(0, 6, 0);
@@ -88,7 +95,7 @@ void Level1::Update(float deltaTime) {
                 //Mix_PlayChannel(-1, damageSound, 0);
                 state.player->position = glm::vec3(1, 0, 0);
             }
-            */
+            
         }
     }
 

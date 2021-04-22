@@ -76,14 +76,42 @@ void Level2::Initialize() {
 
 void Level2::Update(float deltaTime) {
     
-
+    /*
     for (int i = 0; i < LEVEL2_ENEMY_COUNT; i++) {
-        if (state.player->CheckCollision(&state.enemies[i])) {
+        if (fabs(state.player->position.y - state.enemies[i].position.y) <= (state.player->height + state.enemies[i].height) / 2 + 0.05 &&
+            fabs(state.player->position.x - state.enemies[i].position.x) <= (state.player->width + state.enemies[i].width) / 2 &&
+            state.enemies[i].isActive)
+        {
+            if (state.player->velocity.y < 0
+                && state.player->position.y > state.enemies[i].position.y) {
+                state.enemies[i].isActive = false;
+                state.player->velocity.y = 7.0f;
+                //state.player->jump = true;
+            }
+            else {
+                state.player->health -= 1;
+                //Mix_PlayChannel(-1, damageSound, 0);
+                state.player->position = glm::vec3(1, 0, 0);
+                for (int j = 0; j < LEVEL2_ENEMY_COUNT; j++) {
+                    state.enemies[j].isActive = true;
+                }
+            }
+        }
+    }
+    */
+
+    
+    for (int i = 0; i < LEVEL2_ENEMY_COUNT; i++) {
+        if (fabs(state.player->position.y - state.enemies[i].position.y) <= (state.player->height + state.enemies[i].height) / 2 + 0.05 &&
+            fabs(state.player->position.x - state.enemies[i].position.x) <= (state.player->width + state.enemies[i].width) / 2 &&
+            state.enemies[i].isActive)
+        {
             state.enemies[i].isActive = false;
             state.player->velocity.y = 7.0f;
             //state.player->jump = true;
         }
     }
+    
 
     state.player->Update(deltaTime, state.player, state.enemies, LEVEL2_ENEMY_COUNT, state.map);
     for (int i = 0; i < LEVEL2_ENEMY_COUNT; i++) {

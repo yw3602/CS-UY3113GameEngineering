@@ -73,8 +73,7 @@ void Level3::Initialize() {
     state.enemies[1].acceleration = glm::vec3(0, -9.81f, 0);
     state.enemies[1].aiType = WAITANDGO;
     state.enemies[1].aiState = IDLE;
-    state.enemies[1].speed = 1.0f;
-
+    state.enemies[1].speed = 0.5f;
 
 
 }
@@ -83,13 +82,34 @@ void Level3::Update(float deltaTime) {
     state.player->Update(deltaTime, state.player, state.enemies, LEVEL3_ENEMY_COUNT, state.map);
 
     for (int i = 0; i < LEVEL3_ENEMY_COUNT; i++) {
-        state.enemies[i].UpdateEnemy(deltaTime, state.player, state.map);
-    }
+        if (fabs(state.player->position.y - state.enemies[i].position.y) <= (state.player->height + state.enemies[i].height) / 2 + 0.05 &&
+            fabs(state.player->position.x - state.enemies[i].position.x) <= (state.player->width + state.enemies[i].width) / 2 &&
+            state.enemies[i].isActive)
+        {
+            if (state.player->velocity.y < 0
+                && state.player->position.y > state.enemies[i].position.y) {
+                state.enemies[i].isActive = false;
+                state.player->velocity.y = 6.0f;
+                //state.player->jump = true;
+            }
+            else {
+                state.player->health -= 1;
+                //Mix_PlayChannel(-1, damageSound, 0);
+                state.player->position = glm::vec3(1, 0, 0);
+                for (int j = 0; j < LEVEL3_ENEMY_COUNT; j++) {
+                    state.enemies[j].isActive = true;
+                }
+            }
+        }
 
-    if (state.player->position.x >= 26) {
-        state.nextScene = 4;
-    }
+        for (int i = 0; i < LEVEL3_ENEMY_COUNT; i++) {
+            state.enemies[i].UpdateEnemy(deltaTime, state.player, state.map);
+        }
 
+        if (state.player->position.x >= 26) {
+            state.nextScene = 4;
+        }
+    }
 }
 
 void Level3::Render(ShaderProgram* program) {
