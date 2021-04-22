@@ -74,6 +74,7 @@ void Level3::Initialize() {
     state.enemies[1].aiType = WAITANDGO;
     state.enemies[1].aiState = IDLE;
     state.enemies[1].speed = 0.5f;
+    state.enemies[1].height = 0.8f;
 
 
 }

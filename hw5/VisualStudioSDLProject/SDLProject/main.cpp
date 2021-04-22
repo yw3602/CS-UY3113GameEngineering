@@ -247,8 +247,10 @@ void Update() {
 
     if (currentScene->state.player->position.y <= -14) {
         playerHealth -= 1;
-        currentScene->state.player->health = playerHealth;
         Mix_PlayChannel(-1, damageSound, 0);
+        currentScene->Initialize();
+
+        currentScene->state.player->health = playerHealth;
         currentScene->state.player->position = glm::vec3(1, 0, 0);
     }
 

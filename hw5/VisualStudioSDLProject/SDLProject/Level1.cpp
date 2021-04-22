@@ -20,6 +20,7 @@ unsigned int level1_data[] =
 void Level1::Initialize() {
 
     state.nextScene = -1;
+    enemyCount = LEVEL1_ENEMY_COUNT;
 
 	GLuint mapTextureID = Util::LoadTexture("platformPack_tilesheet@2.png");
 	state.map = new Map(LEVEL1_WIDTH, LEVEL1_HEIGHT, level1_data, mapTextureID, 1.0f, 14, 7);
