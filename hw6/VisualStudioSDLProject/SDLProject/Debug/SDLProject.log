@@ -1,0 +1,28 @@
+﻿  Entity.cpp
+  Level1.cpp
+  Level2.cpp
+  Level3.cpp
+  main.cpp
+  Menu.cpp
+  Mesh.cpp
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw6\VisualStudioSDLProject\SDLProject\Mesh.cpp(20,48): warning C4244: “参数”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw6\VisualStudioSDLProject\SDLProject\Mesh.cpp(27,47): warning C4244: “参数”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw6\VisualStudioSDLProject\SDLProject\Mesh.cpp(36,59): warning C4244: “参数”: 从“double”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=float
+          ]
+  Scene.cpp
+  ShaderProgram.cpp
+  Util.cpp
+C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw6\VisualStudioSDLProject\SDLProject\Util.cpp(35,23): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+  SDLProject.vcxproj -> C:\Users\ylwu5\Documents\CS-UY3113GameEngineering\hw6\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
